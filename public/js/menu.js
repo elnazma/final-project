@@ -301,12 +301,13 @@ function calcOrderPost(){
 
 function ajaxGetAddresses(){
     var url =window.location.origin+"/user/address/byRestaurant/"+$("#rest").val()
-    //alert(url)
+    // alert(url)
+    console.log(url);
     $.ajax({
       type : "GET",
       url : url, 
       success: function(result){
-        
+          console.log(result);
         $("#areas").empty();
         $("#areas").append("<label for='areas'>Select Address:</label><select class='form-control' id='areas_select' required>")
         

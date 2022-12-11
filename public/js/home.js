@@ -25,7 +25,7 @@ $( document ).ready(function() {
         areaName :  $("#areas_s").val(),
         cuisine :  $("#cuisines_s").val()
       }
-     // alert(JSON.stringify(formData))
+    //  alert(JSON.stringify(formData))
     $.ajax({
       type : "POST",
       contentType : "application/json",

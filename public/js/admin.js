@@ -1,5 +1,3 @@
-
-
 $( document ).ready(function() {
    $("#aaf").submit(function(event) {
     event.preventDefault();
@@ -311,9 +309,9 @@ $( document ).ready(function() {
       var formData = {
         restaurantName : restaurantName,
         cuisine : cuisine,
-        deliveryFee : deliveryFee,
+        deliveryFee : parseFloat(deliveryFee),
         address : address,
-        taxPercent : taxPercent,
+        taxPercent : parseFloat(taxPercent),
         startHour : startHour,
         endHour : endHour
       }
@@ -333,6 +331,7 @@ $( document ).ready(function() {
         }
         else if(response=="wrong")
         {
+          console.log(formData)
           $("#"+res).empty();
           $("#"+res).html("<p>Wrong fields!<p>")
         }
@@ -455,6 +454,8 @@ $( document ).ready(function() {
         if(response.errno || response.affectedRows==0){
             $("#"+res).empty();
             $("#"+res).html("<p>Something went wrong!<p>")
+            console.log(response)
+
         }
         else{
          $("#"+res).empty();
